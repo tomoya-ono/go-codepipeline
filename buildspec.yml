@@ -15,5 +15,7 @@ phases:
     commands:
       - echo Build completed on `date`
 artifacts:
+  base-directory: bin
   files:
-    - bin/server
+    - server
+  
