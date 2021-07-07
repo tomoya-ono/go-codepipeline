@@ -25,6 +25,10 @@ func main() {
 	server.Static("/css", "./templates/css")
 	server.LoadHTMLGlob("templates/*.html")
 
+	server.GET("/", func(ctx *gin.Context){
+		ctx.JSON(200,gin.H{"tom": "tom"})
+	})
+
 	apiRoutes := server.Group("/api")
 	{
 		apiRoutes.GET("/videos", func(ctx *gin.Context){
